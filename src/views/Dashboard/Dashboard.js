@@ -7,6 +7,7 @@ import "./dashboard.scss";
 import MainVideoTitle from "../../assets/images/main-video-title.png";
 import PlayButton from "../../components/PlayButton/PlayButton";
 import AddButton from "../../components/AddButton/AddButton";
+import SlidersWrapper from "../../components/SlidersWrapper/SlidersWrapper";
 
 const Dashboard = () => {
   const mainSliderSettings = {
@@ -18,6 +19,7 @@ const Dashboard = () => {
     autoplay: true,
     autoplaySpeed: 4000,
     fade: true,
+    draggable: false,
   };
   return (
     <Layout>
@@ -87,6 +89,9 @@ const Dashboard = () => {
             </div>
           </div>
         </Slider>
+      </section>
+      <section className="movies-sliders">
+        <SlidersWrapper />
       </section>
     </Layout>
   );
