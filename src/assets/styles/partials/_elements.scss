@@ -1,0 +1,82 @@
+@import "../../assets/styles/modules/variables";
+@import "./helpers";
+@import "../modules/mixins";
+
+.btn {
+    font-size: 18px;
+    font-weight: $bold;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50px;
+    appearance: none;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    transition: all .25s;
+    cursor: pointer;
+    outline: none!important;
+
+    &--primary {
+        @extend .btn;
+        background-color: #fff;
+        color: #000;
+
+        &:hover {
+            background-color: #000;
+            color: #fff
+        }
+    }
+
+    &--secondary {
+        @extend .btn;
+        background-color: rgba($color: #fff, $alpha: 0.25);
+        color: #fff;
+
+        &:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+}
+
+.select-wrapper {
+    position: relative;
+    background-color: #000;
+    border-radius: 50px;
+    cursor: pointer;
+
+    &:after {
+        @include pseudo;
+        width: 14px;
+        height: 8px;
+        background-image: url(../../icons/ico-dropdown.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        cursor: pointer;
+        top: 52%;
+        transform: translate(0, -50%);
+        right: 15px;
+        z-index: 0;
+    }
+
+    select {
+        background-color: transparent;
+        outline: none;
+        appearance: none;
+        text-align: center;
+        color: #fff;
+        font-size: 16px;
+        padding: 8px 55px 8px 32px;
+        border-radius: 50px;
+        text-align-last: center;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        border: 2px solid #53494c;
+
+        option {
+            text-align: center;
+            color: #fff;
+        }
+    }
+}

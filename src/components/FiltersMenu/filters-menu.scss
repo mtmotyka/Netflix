@@ -1,0 +1,40 @@
+.filters-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 35px 0 0 0;
+    transition: all .25s;
+
+    &.shrink {
+        padding: 15px 0 0 0;
+    }
+
+    &__left-side {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        transform: scale(1);
+        transition: all .25s;
+
+        .left-side {
+            &__filter-name {
+                font-size: 35px;
+                color: #fff;
+                margin-right: 25px;
+            }
+        }
+    }
+
+    &__right-side {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .right-side {
+            &__select {
+                margin-left: 25px;
+            }
+        }
+    }
+}

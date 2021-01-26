@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.75" height="9.188" viewBox="0 0 15.75 9.188">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="ARROW_ICON" data-name="ARROW ICON" class="cls-1" d="M1186.88,221.931l-6.76-6.961a1.157,1.157,0,0,1,0-1.6,1.082,1.082,0,0,1,1.56,0l5.98,6.159,5.99-6.159a1.082,1.082,0,0,1,1.56,0,1.157,1.157,0,0,1,0,1.6l-6.77,6.961a1.065,1.065,0,0,1-.78.332A1.1,1.1,0,0,1,1186.88,221.931Z" transform="translate(-1179.81 -213.062)"/>
+</svg>

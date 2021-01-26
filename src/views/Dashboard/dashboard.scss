@@ -1,0 +1,46 @@
+@import "../../assets/styles/modules/variables";
+@import "../../assets//styles/partials/helpers";
+@import "../../assets/styles/modules/mixins";
+@import "../../assets/styles/modules/slick";
+@import "../../assets/styles/modules/slick-theme";
+
+
+.main-video {
+    width: 100%;
+    height: 100vh;
+    min-height: 1080px;
+
+    .single-slide {
+        background-image: url(../../assets/images/main-movie.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        width: 100%;
+        height: 100vh;
+        padding: 280px 0 0 6%;
+        min-height: 1110px;
+        
+
+    .video-informations {
+        max-width: 500px;
+
+        &__desc {
+            font-size: 24px;
+            color: #fff;
+            margin: 20px 0 55px;
+
+        }
+
+        &__buttons-wrapper {
+
+            .buttons-wrapper {
+                &__button {
+                    &:first-of-type {
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+    }
+    }
+}

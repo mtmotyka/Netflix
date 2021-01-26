@@ -1,0 +1,84 @@
+@import "../../assets/styles/modules/variables";
+@import "../../assets//styles/partials/helpers";
+@import "../../assets/styles/modules/mixins";
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    padding: 40px 6%;
+    transition: all .25s;
+    z-index: 999;
+
+    &.shrink {
+        background-color: #000;
+        padding: 15px 6%;
+    }
+    
+    &__main-menu {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .navigation {
+        margin-left: 100px;
+
+        &__menu {
+            @include reset-list;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .menu {
+                &__item {
+                    margin-right: 78px;
+
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+
+                    a {
+                        color: #fff;
+                        font-size: 19px;
+                        opacity: 0.4;
+                        transition: all .25s;
+                        text-decoration: none;
+
+                        &.active,
+                        &:hover {
+                            opacity: 1;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .profile-container {
+        margin: 0 0 0 auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        &__icon {
+            cursor: pointer;
+            margin: 4px 23px 0 0;
+        }
+
+        .profile-select {
+            cursor: pointer;
+
+            &__avatar {
+                margin-right: 5px;
+            }
+
+            &__dropdown-icon {
+                margin: 4px 0 0 0;
+            }
+        }
+    }
+}
