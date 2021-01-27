@@ -8,7 +8,6 @@ import PopupMovieDetails from "../PopupMovieDetails/PopupMovieDetails";
 const MoviesSlider = (props) => {
   const [popup, setPopup] = useState({ data: "" });
   const moviesSlider = {
-    dots: false,
     arrows: true,
     slidesToShow: 10,
     infinite: false,
@@ -30,25 +29,27 @@ const MoviesSlider = (props) => {
   };
 
   return (
-    <div className="movies-slider">
-      <div className="movies-slider__category-name">{props.category}</div>
-      <Slider {...moviesSlider}>
-        {props.movies.map((movie, index) => {
-          return (
-            <div key={index} onClick={(e) => triggerPopup(movie)}>
-              <div className="single-movie">
-                <img
-                  src={movie["im:image"][2].label}
-                  alt=""
-                  className="img-fluid single-movie__image"
-                />
+    <>
+      <div className="movies-slider">
+        <div className="movies-slider__category-name">{props.category}</div>
+        <Slider {...moviesSlider}>
+          {props.movies.map((movie, index) => {
+            return (
+              <div key={index} onClick={(e) => triggerPopup(movie)}>
+                <div className="single-movie">
+                  <img
+                    src={movie["im:image"][2].label}
+                    alt=""
+                    className="img-fluid single-movie__image"
+                  />
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </Slider>
-      <PopupMovieDetails data={popup.data} />
-    </div>
+            );
+          })}
+        </Slider>
+        <PopupMovieDetails data={popup.data} />
+      </div>
+    </>
   );
 };
 export default MoviesSlider;

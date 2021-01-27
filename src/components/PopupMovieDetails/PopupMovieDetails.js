@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import AddButton from "../AddButton/AddButton";
+import PlayButton from "../PlayButton/PlayButton";
 
 import "./popup-movie-details.scss";
 
@@ -8,14 +10,13 @@ const PopupMovieDetails = (props) => {
       .getElementsByClassName("active-popup")[0]
       .classList.remove("active-popup");
   };
-  // const [closePopup, setClosePopup] = useState("");
   return (
-    <>
-      <div
-        className={`popup-details ${
-          props.data.active === true ? "active-popup" : "kurwy"
-        }`}
-      >
+    <div
+      className={`popup-container ${
+        props.data.active === true ? "active-popup" : ""
+      }`}
+    >
+      <div className={`popup-details`}>
         <span className="popup-details__close-button" onClick={closePopup}>
           &#10006;
         </span>
@@ -25,10 +26,13 @@ const PopupMovieDetails = (props) => {
           <p className="text-container__date">{props.data.releaseDate}</p>
           <p className="text-container__artist">Artist: {props.data.artist}</p>
           <p className="text-container__desc">{props.data.desc}</p>
+          <div className="buttons-container">
+            <PlayButton text="Watch" />
+            <AddButton text="Add list" />
+          </div>
         </div>
       </div>
-      <div className="popup-overlay" />
-    </>
+    </div>
   );
 };
 

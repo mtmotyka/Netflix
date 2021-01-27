@@ -21,28 +21,32 @@
         min-height: 1110px;
         
 
-    .video-informations {
-        max-width: 500px;
+        .video-informations {
+            max-width: 500px;
 
-        &__desc {
-            font-size: 24px;
-            color: #fff;
-            margin: 20px 0 55px;
+            &__desc {
+                font-size: 24px;
+                color: #fff;
+                margin: 20px 0 55px;
 
-        }
+            }
 
-        &__buttons-wrapper {
+            &__buttons-wrapper {
 
-            .buttons-wrapper {
-                &__button {
-                    position: relative;
-                    z-index: 9;
-                    &:first-of-type {
-                        margin-right: 20px;
+                .buttons-wrapper {
+                    &__button {
+                        position: relative;
+                        z-index: 9;
+                        &:first-of-type {
+                            margin-right: 20px;
+                        }
                     }
                 }
             }
         }
     }
-    }
+}
+
+.movies-sliders {
+    margin-top: -150px;
 }

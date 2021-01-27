@@ -43,7 +43,7 @@ $slick-opacity-not-active: 0.25 !default;
   transition: all 150ms linear;
   height: 55px;
   width: 27px;
-  // background-image: url("../images/ico-slick-prev.svg");
+  background-image: url(../../../assets//icons/ico-slider-arrow-left.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
@@ -57,12 +57,15 @@ $slick-opacity-not-active: 0.25 !default;
   &.slick-disabled:before {
     opacity: 1;
   }
+  &.slick-disabled {
+    opacity: 0.1;
+  }
   &.slick-prev {
-    left: 145px;
+    left: -50px;
   }
   &.slick-next {
-    right: 145px;
-    // background-image: url("../images/ico-slick-next.svg");
+    right: -50px;
+    background-image: url(../../../assets//icons/ico-slider-arrow-right.svg);
   }
 }
 

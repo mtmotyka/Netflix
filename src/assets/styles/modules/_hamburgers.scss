@@ -1,3 +1,8 @@
+@import "./variables";
+@import "./bootstrap/functions";
+@import "./bootstrap/variables";
+@import "./bootstrap/mixins/breakpoints";
+
 .hamburger {
   width: 25px;
   height: 25px;
@@ -8,68 +13,10 @@
   background: transparent;
   border: none;
   z-index: 997;
-  margin: 0 0 0 auto;
-  display: block;
-  span {
+  left: 0;
+  display: none;
+ 
+  @include media-breakpoint-down(md) {
     display: block;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background-color: #fff;
-    transform: rotate(0deg);
-    opacity: 1;
-    left: 0;
-    transition: 0.25s ease-in-out;
-    border-radius: 5px;
-    &:nth-child(1) {
-      top: 0px;
-    }
-    &:nth-child(2),
-    &:nth-child(3) {
-      top: 8px;
-    }
-    &:nth-child(4) {
-      top: 17px;
-    }
-  }
-  &:focus {
-    outline: none;
-  }
-  &:not(.is-active):hover span {
-    &:nth-child(2),
-    &:nth-child(3) {
-      animation-duration: 0.5s;
-    }
-  }
-  &:not(.is-active):active span {
-    &:nth-child(1),
-    &:nth-child(2),
-    &:nth-child(3),
-    &:nth-child(4) {
-      transform: rotate(0deg);
-      animation: none;
-    }
-  }
-  &.is-active {
-    span {
-      background-color: #fff;
-      &:nth-child(1) {
-        top: 13px;
-        width: 0%;
-        left: 50%;
-      }
-      &:nth-child(2) {
-        transform: rotate(45deg);
-      }
-
-      &:nth-child(3) {
-        transform: rotate(-45deg);
-      }
-      &:nth-child(4) {
-        top: 13px;
-        width: 0%;
-        left: 50%;
-      }
-    }
   }
 }

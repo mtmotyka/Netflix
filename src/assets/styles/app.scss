@@ -1,7 +1,11 @@
 @import url("https://use.typekit.net/agn0ger.css");
 
 @import "modules/bootstrap/bootstrap";
-@import "/modules/variables";
+@import "./modules/bootstrap/functions";
+@import "./modules/bootstrap/variables";
+@import "./modules/bootstrap/mixins/breakpoints";;
+@import "./modules/variables";
+@import "./modules/bootstrap/mixins";
 
 .container-fluid {
   padding-left: 6%;
@@ -32,6 +36,15 @@ h4,
 h5,
 h6 {
     margin: 0;
+}
+
+button {
+  background-color: transparent;
+  background:transparent;
+  border: none;
+  outline: none!important;
+  appearance: none;
+  border-radius: 0;
 }
 
 @import "modules/_mixins";

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import "./header.scss";
+import "../../assets/styles/modules/_hamburgers.scss";
 
 import LogoNetflix from "../../assets/images/netflix-logo.png";
 import AvatarSmall from "../../assets/images/avatar-small.png";
+import IcoHamburger from "../../assets/icons/ico-hamburger.png";
 import { ReactComponent as IcoSearch } from "../../assets/icons/ico-search.svg";
 import { ReactComponent as IcoNotification } from "../../assets/icons/ico-notification.svg";
 import { ReactComponent as IcoDropdown } from "../../assets/icons/ico-dropdown.svg";
@@ -12,6 +14,7 @@ import FiltersMenu from "../FiltersMenu/FiltersMenu";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showSearchBar, setShowSearchBar] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -45,6 +48,16 @@ const Header = () => {
             </li>
           </ul>
         </nav>
+        <button
+          type="button"
+          aria-label="Otwórz menu"
+          className={`hamburger hamburger--squeeze mobile-menu__hamburger ${
+            isMenuOpen === true ? "is-active" : ""
+          }`}
+          onClick={(e) => setIsMenuOpen(!isMenuOpen)}
+        >
+          <img src={IcoHamburger} alt="Open menu" />
+        </button>
         <div className="profile-container">
           <input
             type="text"
