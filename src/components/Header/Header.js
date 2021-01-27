@@ -11,6 +11,7 @@ import FiltersMenu from "../FiltersMenu/FiltersMenu";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showSearchBar, setShowSearchBar] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -45,7 +46,19 @@ const Header = () => {
           </ul>
         </nav>
         <div className="profile-container">
-          <IcoSearch className="profile-container__icon" />
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Start typing..."
+            className={`rounded-input profile-container__search-input ${
+              showSearchBar === true ? "visible" : ""
+            }`}
+          />
+          <IcoSearch
+            className="profile-container__icon"
+            onClick={(e) => setShowSearchBar(!showSearchBar)}
+          />
           <IcoNotification className="profile-container__icon" />
           <div className="profile-select">
             <img

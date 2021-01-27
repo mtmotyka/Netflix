@@ -14,7 +14,7 @@ body {
   color: $color-text;
   font-family: $font-family-base;
   font-size: 17px;
-  font-weight: 400;
+  font-weight: $regular;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;

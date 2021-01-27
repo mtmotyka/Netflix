@@ -1,0 +1,81 @@
+
+@import "../../assets/styles/modules/variables";
+@import "../../assets//styles/partials/helpers";
+@import "../../assets/styles/modules/mixins";
+
+.custom-select {
+    position: relative;
+
+    &__label {
+        background-color: #000;
+        border-radius: 20px;
+        cursor: pointer;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        padding: 8px 55px 8px 32px;
+        position: relative;
+        border: 1px solid #53494c;
+
+        &.clicked {
+            border-radius: 20px 20px 0 0;
+            border: 1px solid $color-red;
+            border-bottom: 1px solid transparent;
+
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 52%;
+        right: 25px;
+        transform: translate(0, -50%);
+        transition: all .25s
+
+    }
+
+    &__list {
+        @include reset-list;
+        background-color: #000;
+        border: 1px solid $color-red;
+        padding: 10px 0 15px;
+        border-radius: 0 0 20px 20px;
+        border-top: none;
+        position: absolute;
+        top: 41px;
+        left: 0;
+        width: 100%;
+        display: none;
+
+        &.opened {
+            display: block;
+        }
+
+        &:before {
+            @include pseudo;
+            width: 90%;
+            height: 1px;
+            background-color: $color-gray;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%, 0);
+        }
+
+        li {
+            color: #fff;
+            font-size: 16px;
+            background-color: #000;
+            transition: all .25s;
+            padding: 5px 10px;
+            cursor: pointer;
+            
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            &:hover {
+                background-color: $color-gray;
+            }
+        }
+    }
+}

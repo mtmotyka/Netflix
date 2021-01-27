@@ -1,0 +1,84 @@
+@import "../../assets/styles/modules/variables";
+@import "../../assets//styles/partials/helpers";
+@import "../../assets/styles/modules/mixins";
+
+.footer {
+    background-color: $color-black;
+    padding: 150px 0 80px;
+
+    .container {
+        max-width: 1110px;
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-left: 185px;
+
+        &__netflix-logo {
+            position: absolute;
+            left: 0;
+            top: 10px;
+        }
+
+        .inner {
+            margin-right: 130px;
+
+            &:last-of-type {
+                margin-right: 0
+            }
+
+            &__menu {
+                @include reset-list;
+
+                li {
+                    margin-bottom: 15px;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+
+                    a {
+                        font-size: 15px;
+                        color: #53535b;
+
+                        &:hover {
+                            color: #fff;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .socials-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 47px;
+
+        &__single-icon {
+            margin: 0 19px;
+            cursor: pointer;
+
+            svg {
+                width: 34px;
+                height: 34px;
+                transition: all .25s;
+                cursor: pointer;
+                
+                path {
+                    fill: $color-gray;
+                    transition: all .25s;
+                }
+    
+                &:hover {
+                    path {
+                        fill: $color-red;
+                    }
+                }
+            }
+        }
+    }
+}

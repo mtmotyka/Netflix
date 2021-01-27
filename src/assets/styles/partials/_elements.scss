@@ -38,45 +38,13 @@
     }
 }
 
-.select-wrapper {
-    position: relative;
+.rounded-input {
     background-color: #000;
+    border: 2px solid $color-gray;
     border-radius: 50px;
-    cursor: pointer;
-
-    &:after {
-        @include pseudo;
-        width: 14px;
-        height: 8px;
-        background-image: url(../../icons/ico-dropdown.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center center;
-        cursor: pointer;
-        top: 52%;
-        transform: translate(0, -50%);
-        right: 15px;
-        z-index: 0;
-    }
-
-    select {
-        background-color: transparent;
-        outline: none;
-        appearance: none;
-        text-align: center;
-        color: #fff;
-        font-size: 16px;
-        padding: 8px 55px 8px 32px;
-        border-radius: 50px;
-        text-align-last: center;
-        cursor: pointer;
-        position: relative;
-        z-index: 1;
-        border: 2px solid #53494c;
-
-        option {
-            text-align: center;
-            color: #fff;
-        }
-    }
+    outline: none;
+    appearance: none;
+    font-size: 14px;
+    padding: 5px 15px;
+    color: #fff;
 }
