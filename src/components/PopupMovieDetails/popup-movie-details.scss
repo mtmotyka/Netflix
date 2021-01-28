@@ -5,117 +5,111 @@
 @import "../../assets/styles/modules/bootstrap/variables";
 @import "../../assets/styles/modules/bootstrap/mixins/breakpoints";
 
-.popup-container {
-    position: fixed;
-    display: none;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+.popup-details {
+    max-width: 700px;
+    width: 700px;
+    display: flex;
+    padding: 60px 40px;
+    border-radius: 10px;
+    background-color: #000;
+    justify-content: flex-start;
+    align-items: flex-start;
     z-index: 100;
+    border: 1px solid $color-red;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 600px;
+    z-index: 101;
 
-    &.active-popup {
-        display: flex;
+    @include media-breakpoint-down(sm) {
+        max-width: calc(100% - 30px);
+        padding: 40px 30px;
+        flex-direction: column;
+        overflow-y: auto;
     }
 
-    .popup-details {
-        max-width: 700px;
-        display: flex;
-        padding: 60px 40px;
-        border-radius: 10px;
-        background-color: #000;
-        justify-content: flex-start;
-        align-items: flex-start;
-        z-index: 100;
-        border: 1px solid $color-red;
-        position: relative;
-        max-height: 600px;
+    @include media-breakpoint-down(xs) {
+        max-height: calc(100% - 80px);
+        padding: 40px 15px;
+    }
+
+    &__close-button {
+        right: 15px;
+        top: 15px;
+        color: #fff;
+        display: block;
+        position: fixed;
+        font-size: 23px;
+        cursor: pointer;
+    }
+
+    &__image {
+        display: block;
 
         @include media-breakpoint-down(sm) {
-            max-width: calc(100% - 30px);
-            padding: 40px 30px;
-            flex-direction: column;
-            overflow-y: auto;
+            margin: 0 auto;
+        }
+    }
+
+    .text-container {
+        margin: -15px 0 0 40px;
+
+        @include media-breakpoint-down(sm) {
+            margin: 30px 0 0 0;
         }
 
-        @include media-breakpoint-down(xs) {
-            max-height: calc(100% - 80px)
-        }
-    
-        &__close-button {
-            right: 15px;
-            top: 15px;
+        &__title {
+            font-size: 36px;
             color: #fff;
-            display: block;
-            position: absolute;
-            font-size: 23px;
-            cursor: pointer;
-        }
+            font-weight: $bold;
 
-        &__image {
-            display: block;
-
-            @include media-breakpoint-down(xs) {
-                margin: 0 auto;
+            @include media-breakpoint-down(md) {
+                font-size: 30px;
+                line-height: 1.1;
             }
         }
-    
-        .text-container {
-            margin: -15px 0 0 40px;
+
+        &__date {
+            color: #fff;
+            opacity: 0.3;
+            font-size: 18px;
+        }
+
+        &__artist {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        &__desc {
+            color: #fff;
+            margin: 20px 0 35px;
+            max-height: 137px;
+            overflow-y: auto;
 
             @include media-breakpoint-down(sm) {
-                margin: 30px 0 0 0;
+                font-size: 15px;
             }
-    
-            &__title {
-                font-size: 36px;
-                color: #fff;
-                font-weight: $bold;
+        }
 
-                @include media-breakpoint-down(md) {
-                    font-size: 30px;
-                    line-height: 1.1;
-                }
-            }
-    
-            &__date {
-                color: #fff;
-                opacity: 0.3;
-                font-size: 18px;
-            }
-    
-            &__artist {
-                color: #fff;
-                font-size: 16px;
-            }
-    
-            &__desc {
-                color: #fff;
-                margin: 20px 0;
-                max-height: 137px;
-                overflow-y: auto;
+        .buttons-container {
+            display: flex;
+            width: 100%;
+            justify-content: flex-start;
+            align-items: center;
 
-                @include media-breakpoint-down(sm) {
-                    font-size: 15px;
-                }
-            }
+            @include media-breakpoint-down(sm) {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }   
 
-            .buttons-container {
-                display: flex;
-                width: 100%;
-                justify-content: space-between;
-                align-items: center;
-
-                @include media-breakpoint-down(sm) {
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                }   
-
-                &__button {
-                    &:first-of-type {
-                        @include media-breakpoint-down(sm) {
-                            margin-bottom: 20px;
-                        }
+            &__button {
+                margin-right: 20px;
+                &:first-of-type {
+                    @include media-breakpoint-down(sm) {
+                        margin: 0 0 20px 0;
                     }
                 }
             }
@@ -131,5 +125,5 @@
     top: 0;
     left: 0;
     background-color: rgba($color: #000, $alpha: 0.8);
-    z-index: 10;
+    z-index: 100;
 }
