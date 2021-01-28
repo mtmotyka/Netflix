@@ -68,7 +68,11 @@
             display: none;
 
             &.visible {
-                display: block
+                display: none;
+
+                @include media-breakpoint-down(sm) {
+                    display: block;
+                }
             }
         }
 

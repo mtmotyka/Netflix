@@ -7,7 +7,7 @@ import IcoRecomendations from "../../assets/icons/ico-recomendations-square.png"
 const RecomendationsList = () => {
   const [isListOpened, setIsListOpened] = useState(false);
   return (
-    <div className="custom-select">
+    <div className="custom-select custom-select--recomendations">
       <div
         className={`custom-select__label label ${
           isListOpened === true ? "clicked" : ""
