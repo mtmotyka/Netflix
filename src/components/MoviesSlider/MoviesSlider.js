@@ -5,9 +5,12 @@ import LazyLoad from "react-lazyload";
 import "./movies-slider.scss";
 
 import PopupMovieDetails from "../PopupMovieDetails/PopupMovieDetails";
+import { render } from "@testing-library/react";
 
 const MoviesSlider = (props) => {
   const [popup, setPopup] = useState({ data: "" });
+  const [showPopup, setShowPopup] = useState(false);
+
   const moviesSlider = {
     arrows: true,
     slidesToShow: 10,
@@ -61,7 +64,7 @@ const MoviesSlider = (props) => {
     ],
   };
 
-  const triggerPopup = (movie) => {
+  const openPopup = (movie) => {
     setPopup({
       data: {
         title: movie["im:name"].label,
@@ -69,9 +72,20 @@ const MoviesSlider = (props) => {
         desc: movie.summary.label,
         releaseDate: movie["im:releaseDate"].attributes.label,
         artist: movie["im:artist"].label,
-        active: true,
       },
     });
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setPopup({ data: "" });
+    setShowPopup(false);
+  };
+
+  const renderPopup = () => {
+    if (showPopup) {
+      return <PopupMovieDetails data={popup.data} handleClose={closePopup} />;
+    }
   };
 
   return (
@@ -82,7 +96,7 @@ const MoviesSlider = (props) => {
           {props.movies.map((movie, index) => {
             return (
               <LazyLoad once>
-                <div key={index} onClick={(e) => triggerPopup(movie)}>
+                <div key={index} onClick={(e) => openPopup(movie)}>
                   <div className="single-movie">
                     <img
                       src={movie["im:image"][2].label}
@@ -95,7 +109,7 @@ const MoviesSlider = (props) => {
             );
           })}
         </Slider>
-        <PopupMovieDetails data={popup.data} />
+        {renderPopup()}
       </div>
     </>
   );
