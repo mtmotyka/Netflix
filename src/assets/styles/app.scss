@@ -10,6 +10,11 @@
 .container-fluid {
   padding-left: 6%;
   padding-right: 6%;
+
+  @include media-breakpoint-down(md) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 body {

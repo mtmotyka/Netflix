@@ -25,69 +25,38 @@ const Dashboard = () => {
     <Layout>
       <section className="main-video">
         <Slider {...mainSliderSettings}>
-          <div>
-            <div className="single-slide">
-              <div className="video-informations">
-                <img src={MainVideoTitle} alt="Jak ukraść księżyc" />
-                <p className="video-informations__desc">
-                  He is an evil villain who wants to steal the moon. Fortunately
-                  for us, three girls are not going to let this happen!
-                </p>
-                <div className="video-informations__buttons-wrapper buttons-wrapper">
-                  <PlayButton
-                    text="Watch"
-                    className="buttons-wrapper__button"
-                  />
-                  <AddButton
-                    text="Add list"
-                    className="buttons-wrapper__button"
-                  />
+          {Array(3)
+            .fill(null)
+            .map((index) => {
+              return (
+                <div key={index}>
+                  <div className="single-slide">
+                    <div className="video-informations">
+                      <img
+                        src={MainVideoTitle}
+                        alt="Jak ukraść księżyc"
+                        className="video-informations__logo"
+                      />
+                      <p className="video-informations__desc">
+                        He is an evil villain who wants to steal the moon.
+                        Fortunately for us, three girls are not going to let
+                        this happen!
+                      </p>
+                      <div className="video-informations__buttons-wrapper buttons-wrapper">
+                        <PlayButton
+                          text="Watch"
+                          className="buttons-wrapper__button"
+                        />
+                        <AddButton
+                          text="Add list"
+                          className="buttons-wrapper__button"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="single-slide">
-              <div className="video-informations">
-                <img src={MainVideoTitle} alt="Jak ukraść księżyc" />
-                <p className="video-informations__desc">
-                  He is an evil villain who wants to steal the moon. Fortunately
-                  for us, three girls are not going to let this happen!
-                </p>
-                <div className="video-informations__buttons-wrapper buttons-wrapper">
-                  <PlayButton
-                    text="Watch"
-                    className="buttons-wrapper__button"
-                  />
-                  <AddButton
-                    text="Add list"
-                    className="buttons-wrapper__button"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="single-slide">
-              <div className="video-informations">
-                <img src={MainVideoTitle} alt="Jak ukraść księżyc" />
-                <p className="video-informations__desc">
-                  He is an evil villain who wants to steal the moon. Fortunately
-                  for us, three girls are not going to let this happen!
-                </p>
-                <div className="video-informations__buttons-wrapper buttons-wrapper">
-                  <PlayButton
-                    text="Watch"
-                    className="buttons-wrapper__button"
-                  />
-                  <AddButton
-                    text="Add list"
-                    className="buttons-wrapper__button"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+              );
+            })}
         </Slider>
       </section>
       <section className="movies-sliders">

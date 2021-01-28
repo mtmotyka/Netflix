@@ -25,7 +25,11 @@ const SlidersWrapper = () => {
   }, []);
   const renderSliders = () => {
     if (!categories) {
-      return <div>Loading..</div>;
+      return (
+        <div className="loading-placeholder">
+          Loading popular categories and movies...
+        </div>
+      );
     }
     return Object.keys(categories).map((category) => {
       return <MoviesSlider category={category} movies={categories[category]} />;

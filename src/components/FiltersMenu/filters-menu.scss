@@ -1,10 +1,21 @@
+@import "../../assets/styles/modules/variables";
+@import "../../assets//styles/partials/helpers";
+@import "../../assets/styles/modules/mixins";
+@import "../../assets/styles/modules/bootstrap/functions";
+@import "../../assets/styles/modules/bootstrap/variables";
+@import "../../assets/styles/modules/bootstrap/mixins/breakpoints";
+
 .filters-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 35px 0 0 0;
+    padding: 30px 0 0 0;
     transition: all .25s;
+
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
 
     &.shrink {
         padding: 15px 0 0 0;

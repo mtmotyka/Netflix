@@ -1,4 +1,9 @@
-@charset "UTF-8";
+@import "./bootstrap/functions";
+@import "./bootstrap/variables";
+@import "./bootstrap/mixins/breakpoints";
+
+
+
 
 // Default Variables
 
@@ -62,10 +67,26 @@ $slick-opacity-not-active: 0.25 !default;
   }
   &.slick-prev {
     left: -50px;
+    
+    @include media-breakpoint-down(lg) {
+      left: -25px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      left: -5px;
+    }
   }
   &.slick-next {
     right: -50px;
     background-image: url(../../../assets//icons/ico-slider-arrow-right.svg);
+
+    @include media-breakpoint-down(lg) {
+      right: -25px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      right: -5px;
+    }
   }
 }
 
@@ -97,6 +118,7 @@ $slick-opacity-not-active: 0.25 !default;
       outline: none;
       line-height: 0px;
       font-size: 0px;
+      background-color: #fff;
       color: #fff;
       opacity: 0.14;
       cursor: pointer;

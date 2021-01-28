@@ -4,6 +4,7 @@ import "./filters-menu.scss";
 
 import IcoHamburger from "../../assets/icons/ico-hamburger.png";
 import SelectList from "../SelectList/SelectList";
+import RecomendationsList from "../RecomendationsList/RecomendationsList";
 
 const FiltersMenu = (props) => {
   return (
@@ -15,7 +16,7 @@ const FiltersMenu = (props) => {
       <div className="filters-menu__right-side right-side">
         <img src={IcoHamburger} alt="Open menu" />
         <div className="right-side__select select-wrapper">
-          <SelectList />
+          <RecomendationsList />
         </div>
       </div>
     </div>

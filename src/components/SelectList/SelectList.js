@@ -20,12 +20,11 @@ const SelectList = () => {
           isListOpened === true ? "opened" : ""
         }`}
       >
-        <li onClick={(e) => setIsListOpened(!isListOpened)}>Item list</li>
-        <li onClick={(e) => setIsListOpened(!isListOpened)}>Item list</li>
-        <li onClick={(e) => setIsListOpened(!isListOpened)}>Item list</li>
-        <li onClick={(e) => setIsListOpened(!isListOpened)}>Item list</li>
-        <li onClick={(e) => setIsListOpened(!isListOpened)}>Item list</li>
-        <li onClick={(e) => setIsListOpened(!isListOpened)}>Item list</li>
+        <li onClick={(e) => setIsListOpened(!isListOpened)}>Movie genre 1</li>
+        <li onClick={(e) => setIsListOpened(!isListOpened)}>Movie genre 2</li>
+        <li onClick={(e) => setIsListOpened(!isListOpened)}>Movie genre 3</li>
+        <li onClick={(e) => setIsListOpened(!isListOpened)}>Movie genre 4</li>
+        <li onClick={(e) => setIsListOpened(!isListOpened)}>Movie genre 5</li>
       </ul>
     </div>
   );

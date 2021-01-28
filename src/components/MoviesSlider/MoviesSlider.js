@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
+import LazyLoad from "react-lazyload";
 
 import "./movies-slider.scss";
 
@@ -13,6 +14,51 @@ const MoviesSlider = (props) => {
     infinite: false,
     slidesToScroll: 1,
     draggable: false,
+    lazyLoad: true,
+    responsive: [
+      {
+        breakpoint: 1440,
+        settings: {
+          slidesToShow: 8,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 425,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const triggerPopup = (movie) => {
@@ -35,15 +81,17 @@ const MoviesSlider = (props) => {
         <Slider {...moviesSlider}>
           {props.movies.map((movie, index) => {
             return (
-              <div key={index} onClick={(e) => triggerPopup(movie)}>
-                <div className="single-movie">
-                  <img
-                    src={movie["im:image"][2].label}
-                    alt=""
-                    className="img-fluid single-movie__image"
-                  />
+              <LazyLoad once>
+                <div key={index} onClick={(e) => triggerPopup(movie)}>
+                  <div className="single-movie">
+                    <img
+                      src={movie["im:image"][2].label}
+                      alt=""
+                      className="img-fluid single-movie__image"
+                    />
+                  </div>
                 </div>
-              </div>
+              </LazyLoad>
             );
           })}
         </Slider>

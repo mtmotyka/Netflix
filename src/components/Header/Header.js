@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import "./header.scss";
 import "../../assets/styles/modules/_hamburgers.scss";
@@ -26,25 +27,61 @@ const Header = () => {
     <header className={`header ${isScrolled ? "shrink" : ""}`}>
       <div className="header__main-menu">
         <div className="logo-wrapper">
-          <a href="/">
+          <Link to="/">
             <img src={LogoNetflix} alt="www.netflix.com" />
-          </a>
+          </Link>
         </div>
         <nav className="navigation">
-          <ul className="navigation__menu menu">
+          <ul
+            className={`navigation__menu menu ${
+              isMenuOpen === true ? "active" : ""
+            }`}
+          >
+            <span
+              className={`navigation__close-menu ${
+                isMenuOpen === true ? "visible" : ""
+              }`}
+              onClick={(e) => setIsMenuOpen(false)}
+            >
+              &#10006;
+            </span>
             <li className="menu__item">
-              <a href="/" className="active">
+              <Link to="/" className="active">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="menu__item">
-              <a href="/">Movies</a>
+              <Link to="/">Movies</Link>
             </li>
             <li className="menu__item">
-              <a href="/">Series</a>
+              <Link to="/">Series</Link>
             </li>
             <li className="menu__item">
-              <a href="/">My list</a>
+              <Link to="/">My list</Link>
+            </li>
+            <li className="menu__item item item--mobile">
+              <Link to="/">Movie genre 1</Link>
+            </li>
+            <li className="menu__item item item--mobile">
+              <Link to="/">Movie genre 2</Link>
+            </li>
+            <li className="menu__item item item--mobile">
+              <Link to="/">Movie genre 3</Link>
+            </li>
+            <li className="menu__item item item--mobile">
+              <Link to="/">Movie genre 4</Link>
+            </li>
+            <li className="menu__item item item--mobile">
+              <Link to="/">Movie genre 5</Link>
+            </li>
+            <li className="menu__item item item--mobile">
+              <Link to="/">Recomendation 1</Link>
+            </li>
+            <li className="menu__item item item--mobile">
+              <Link to="/">Recomendation 2</Link>
+            </li>
+            <li className="menu__item item item--mobile">
+              <Link to="/">Recomendation 3</Link>
             </li>
           </ul>
         </nav>
@@ -59,15 +96,33 @@ const Header = () => {
           <img src={IcoHamburger} alt="Open menu" />
         </button>
         <div className="profile-container">
-          <input
-            type="text"
-            name="search"
-            id="search"
-            placeholder="Start typing..."
-            className={`rounded-input profile-container__search-input ${
+          <div
+            className={`profile-container__search-wrapper ${
               showSearchBar === true ? "visible" : ""
             }`}
-          />
+          >
+            <span
+              className="profile-container__close-search"
+              onClick={(e) => setShowSearchBar(false)}
+            >
+              &#10006;
+            </span>
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Start typing..."
+              className={`rounded-input profile-container__search-input ${
+                showSearchBar === true ? "visible" : ""
+              }`}
+            />
+            <button
+              type="submit"
+              className="profile-container__search-btn btn--primary"
+            >
+              Search
+            </button>
+          </div>
           <IcoSearch
             className="profile-container__icon"
             onClick={(e) => setShowSearchBar(!showSearchBar)}

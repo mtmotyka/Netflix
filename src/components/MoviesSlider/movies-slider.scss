@@ -1,17 +1,48 @@
 @import "../../assets/styles/modules/variables";
 @import "../../assets//styles/partials/helpers";
 @import "../../assets/styles/modules/mixins";
+@import "../../assets/styles/modules/bootstrap/functions";
+@import "../../assets/styles/modules/bootstrap/variables";
+@import "../../assets/styles/modules/bootstrap/mixins/breakpoints";
 
 .movies-slider {
     margin-bottom: 100px;
     position: relative;
     padding: 0 6%;
 
+    @include media-breakpoint-down(xs) {
+        margin-bottom: 70px;
+    }
+
     &__category-name {
         font-size: 36px;
         color: #fff;
-        padding-left: 2.2%;
-        margin-bottom: 10px;
+        padding-left: 1.5%;
+        margin-bottom: 40px;
+        position: relative;
+
+        &:before {
+            @include pseudo;
+            width: 50px;
+            height: 1px;
+            background-color: $color-red;
+            left: 1.5%;
+            bottom: -10px;
+
+            @include media-breakpoint-down(md) {
+                left: 50%;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        @include media-breakpoint-down(md) {
+            text-align: center;
+            padding-left: 0;
+        }
+
+        @include media-breakpoint-down(xs) {
+            font-size: 24px;
+        }
     }
 
     .single-movie {

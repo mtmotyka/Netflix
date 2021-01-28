@@ -19,19 +19,84 @@
         height: 100vh;
         padding: 280px 0 0 6%;
         min-height: 1110px;
+
+        @include media-breakpoint-down(lg) {
+            height: 900px;
+            min-height: 900px;
+        }
+
+        @include media-breakpoint-down(md) {
+            padding: 280px 0 0 15px;
+            height: 768px;
+            min-height: 768px;
+        }
+
+        @include media-breakpoint-down(xs) {
+            height: 100vh;
+            min-height: 750px;
+            padding: 150px 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        &:before {
+            @include pseudo;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: $color-black, $alpha: 0.4);
+            left: 0;
+            top: 0;
+            z-index: 1;
+            display: none;
+
+            @include media-breakpoint-down(xs) {
+                display: block;
+            }
+        }
         
 
         .video-informations {
             max-width: 500px;
+            position: relative;
+            z-index: 2;
+
+            &__logo {
+                @include media-breakpoint-down(md) {
+                    max-height: 200px;
+                }
+
+                @include media-breakpoint-down(xs) {
+                    display: block;
+                    margin: 0 auto;
+                    max-height: 150px;
+                }
+            }
 
             &__desc {
                 font-size: 24px;
                 color: #fff;
                 margin: 20px 0 55px;
 
+                @include media-breakpoint-down(lg) {
+                    font-size: 20px;
+                }
+
+                @include media-breakpoint-down(xs) {
+                    text-align: center;
+                }
+
             }
 
             &__buttons-wrapper {
+
+                @include media-breakpoint-down(xs) {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
 
                 .buttons-wrapper {
                     &__button {
@@ -39,14 +104,36 @@
                         z-index: 9;
                         &:first-of-type {
                             margin-right: 20px;
+
+                            @include media-breakpoint-down(xs) {
+                                margin: 0 0 20px 0;
+                            }
                         }
                     }
                 }
             }
         }
     }
+
+    .slick-dots {
+        @include media-breakpoint-down(lg) {
+            bottom: 230px;
+        }
+
+        @include media-breakpoint-down(md) {
+            bottom: 0;
+        }
+
+        @include media-breakpoint-down(xs) {
+            bottom: 15px;
+        }
+    }
 }
 
 .movies-sliders {
     margin-top: -150px;
+
+    @include media-breakpoint-down(md) {
+        margin-top: -250px;
+    }
 }
