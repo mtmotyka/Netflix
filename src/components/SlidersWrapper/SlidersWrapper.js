@@ -6,7 +6,6 @@ import "./sliders-wrapper.scss";
 import MoviesSlider from "../MoviesSlider/MoviesSlider";
 
 const SlidersWrapper = () => {
-  const [movies, setMovies] = useState(null);
   const [categories, setCategories] = useState(null);
   useEffect(() => {
     (async () => {
@@ -15,7 +14,6 @@ const SlidersWrapper = () => {
       );
       const data = await response.json();
       const movieData = data.feed.entry;
-      setMovies(movieData);
       const categories = _.groupBy(
         movieData,
         (movie) => movie.category.attributes.label
