@@ -75,13 +75,13 @@ const Header = () => {
               <Link to="/">Movie genre 5</Link>
             </li>
             <li className="menu__item item item--mobile">
-              <Link to="/">Recomendation 1</Link>
+              <Link to="/">Recommendation 1</Link>
             </li>
             <li className="menu__item item item--mobile">
-              <Link to="/">Recomendation 2</Link>
+              <Link to="/">Recommendation 2</Link>
             </li>
             <li className="menu__item item item--mobile">
-              <Link to="/">Recomendation 3</Link>
+              <Link to="/">Recommendation 3</Link>
             </li>
           </ul>
         </nav>

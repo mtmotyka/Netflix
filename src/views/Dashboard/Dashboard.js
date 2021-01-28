@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../../components/Layout/Layout";
 import Slider from "react-slick";
+import { Fade } from "react-awesome-reveal";
 
 import "./dashboard.scss";
 
@@ -32,26 +33,32 @@ const Dashboard = () => {
                 <div key={index}>
                   <div className="single-slide">
                     <div className="video-informations">
-                      <img
-                        src={MainVideoTitle}
-                        alt="Jak ukraść księżyc"
-                        className="video-informations__logo"
-                      />
-                      <p className="video-informations__desc">
-                        He is an evil villain who wants to steal the moon.
-                        Fortunately for us, three girls are not going to let
-                        this happen!
-                      </p>
-                      <div className="video-informations__buttons-wrapper buttons-wrapper">
-                        <PlayButton
-                          text="Watch"
-                          className="buttons-wrapper__button"
+                      <Fade delay={0} triggerOnce>
+                        <img
+                          src={MainVideoTitle}
+                          alt="Jak ukraść księżyc"
+                          className="video-informations__logo"
                         />
-                        <AddButton
-                          text="Add list"
-                          className="buttons-wrapper__button"
-                        />
-                      </div>
+                      </Fade>
+                      <Fade delay={0} triggerOnce>
+                        <p className="video-informations__desc">
+                          He is an evil villain who wants to steal the moon.
+                          Fortunately for us, three girls are not going to let
+                          this happen!
+                        </p>
+                      </Fade>
+                      <Fade delay={0} triggerOnce>
+                        <div className="video-informations__buttons-wrapper buttons-wrapper">
+                          <PlayButton
+                            text="Watch"
+                            className="buttons-wrapper__button"
+                          />
+                          <AddButton
+                            text="Add list"
+                            className="buttons-wrapper__button"
+                          />
+                        </div>
+                      </Fade>
                     </div>
                   </div>
                 </div>

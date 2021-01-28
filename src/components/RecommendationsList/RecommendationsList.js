@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import "./recomendations-list.scss";
+import "./recommendations-list.scss";
 import { ReactComponent as IcoDropdown } from "../../assets/icons/ico-dropdown.svg";
-import IcoRecomendations from "../../assets/icons/ico-recomendations-square.png";
+import IcoRecommendations from "../../assets/icons/ico-recomendations-square.png";
 
-const RecomendationsList = () => {
+const RecommendationsList = () => {
   const [isListOpened, setIsListOpened] = useState(false);
   return (
     <div className="custom-select custom-select--recomendations">
@@ -14,7 +14,7 @@ const RecomendationsList = () => {
         }`}
         onClick={(e) => setIsListOpened(!isListOpened)}
       >
-        <img src={IcoRecomendations} alt="" className="label__icon" />
+        <img src={IcoRecommendations} alt="" className="label__icon" />
         RECOMMENDED FOR YOU <IcoDropdown className="custom-select__arrow" />
       </div>
       <ul
@@ -22,12 +22,18 @@ const RecomendationsList = () => {
           isListOpened === true ? "opened" : ""
         }`}
       >
-        <li onClick={(e) => setIsListOpened(!isListOpened)}>Recomendation 1</li>
-        <li onClick={(e) => setIsListOpened(!isListOpened)}>Recomendation 2</li>
-        <li onClick={(e) => setIsListOpened(!isListOpened)}>Recomendation 3</li>
+        <li onClick={(e) => setIsListOpened(!isListOpened)}>
+          Recommendation 1
+        </li>
+        <li onClick={(e) => setIsListOpened(!isListOpened)}>
+          Recommendation 2
+        </li>
+        <li onClick={(e) => setIsListOpened(!isListOpened)}>
+          Recommendation 3
+        </li>
       </ul>
     </div>
   );
 };
 
-export default RecomendationsList;
+export default RecommendationsList;

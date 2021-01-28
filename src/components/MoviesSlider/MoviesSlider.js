@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import LazyLoad from "react-lazyload";
+import { Fade } from "react-awesome-reveal";
 
 import "./movies-slider.scss";
 
 import PopupMovieDetails from "../PopupMovieDetails/PopupMovieDetails";
-import { render } from "@testing-library/react";
 
 const MoviesSlider = (props) => {
   const [popup, setPopup] = useState({ data: "" });
@@ -91,7 +91,9 @@ const MoviesSlider = (props) => {
   return (
     <>
       <div className="movies-slider">
-        <div className="movies-slider__category-name">{props.category}</div>
+        <Fade delay={30} direction={"left"} triggerOnce>
+          <div className="movies-slider__category-name">{props.category}</div>
+        </Fade>
         <Slider {...moviesSlider}>
           {props.movies.map((movie, index) => {
             return (
