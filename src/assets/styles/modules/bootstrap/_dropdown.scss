@@ -8,7 +8,7 @@
 
 .dropdown-toggle {
   // Generate the caret automatically
-  @include caret;
+  // @include caret;
 }
 
 // The dropdown menu
@@ -19,7 +19,7 @@
   z-index: $zindex-dropdown;
   display: none; // none by default, but block on "open" of the menu
   float: left;
-  min-width: $dropdown-min-width;
+  min-width: 100%;
   padding: $dropdown-padding-y 0;
   margin: $dropdown-spacer 0 0; // override default ul
   font-size: $font-size-base; // Redeclare because nesting can cause inheritance issues
@@ -29,7 +29,8 @@
   background-color: $dropdown-bg;
   background-clip: padding-box;
   border: $dropdown-border-width solid $dropdown-border-color;
-  @include border-radius($dropdown-border-radius);
+  border-radius: 0 0 20px 20px;
+  border-top: none;
   @include box-shadow($dropdown-box-shadow);
 }
 

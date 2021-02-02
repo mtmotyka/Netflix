@@ -25,26 +25,38 @@ const Header = () => {
 
   return (
     <header className={`header ${isScrolled ? "shrink" : ""}`}>
-      <div className="header__main-menu">
-        <div className="logo-wrapper">
+      <div
+        className="header__main-menu 
+        d-flex justify-content-center 
+        justify-content-sm-start 
+        align-items-center 
+        flex-wrap"
+      >
+        <span
+          className={`navigation__close-menu ${
+            isMenuOpen === true ? "visible" : ""
+          }`}
+          onClick={(e) => setIsMenuOpen(false)}
+        >
+          &#10006;
+        </span>
+        <div className="logo-wrapper d-flex justify-content-center">
           <Link to="/">
-            <img src={LogoNetflix} alt="www.netflix.com" />
+            <h1>
+              <img src={LogoNetflix} alt="Netflix.com - Video Streaming" />
+            </h1>
           </Link>
         </div>
         <nav className="navigation">
           <ul
-            className={`navigation__menu menu ${
-              isMenuOpen === true ? "active" : ""
-            }`}
+            className={`navigation__menu menu 
+              justify-content-center 
+              justify-content-sm-center 
+              flex-column 
+              flex-xl-row 
+              justify-content-xl-start 
+              align-items-xl-center ${isMenuOpen === true ? "active" : ""}`}
           >
-            <span
-              className={`navigation__close-menu ${
-                isMenuOpen === true ? "visible" : ""
-              }`}
-              onClick={(e) => setIsMenuOpen(false)}
-            >
-              &#10006;
-            </span>
             <li className="menu__item">
               <Link to="/" className="active">
                 Home
@@ -95,10 +107,16 @@ const Header = () => {
         >
           <img src={IcoHamburger} alt="Open menu" />
         </button>
-        <div className="profile-container">
+        <div
+          className="profile-container 
+          d-flex 
+          justify-content-end 
+          align-items-center 
+          ml-auto"
+        >
           <div
             className={`profile-container__search-wrapper ${
-              showSearchBar === true ? "visible" : ""
+              showSearchBar === true ? "d-flex" : "d-none"
             }`}
           >
             <span
@@ -112,13 +130,13 @@ const Header = () => {
               name="search"
               id="search"
               placeholder="Start typing..."
-              className={`rounded-input profile-container__search-input ${
+              className={`rounded-input profile-container__search-input text-md-left text-center ${
                 showSearchBar === true ? "visible" : ""
               }`}
             />
             <button
               type="submit"
-              className="profile-container__search-btn btn--primary"
+              className="profile-container__search-btn btn--primary d-inline-block d-md-none"
             >
               Search
             </button>

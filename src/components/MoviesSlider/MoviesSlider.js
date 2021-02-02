@@ -92,7 +92,7 @@ const MoviesSlider = (props) => {
     <>
       <div className="movies-slider">
         <Fade delay={30} direction={"left"} triggerOnce>
-          <div className="movies-slider__category-name">{props.category}</div>
+          <h2 className="movies-slider__category-name">{props.category}</h2>
         </Fade>
         <Slider {...moviesSlider}>
           {props.movies.map((movie, index) => {

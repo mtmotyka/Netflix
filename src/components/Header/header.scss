@@ -27,24 +27,12 @@
             padding: 15px;
         }
     }
-    
-    &__main-menu {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
 
-        @include media-breakpoint-down(xs) {
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-    }
 
     .logo-wrapper {
         @include media-breakpoint-down(xs) {
             flex: 0 0 100%;
             max-width: 100%;
-            display: flex;
-            justify-content: center;
             margin-bottom: 20px;
         }
     }
@@ -64,7 +52,7 @@
             top: 15px;
             color: #fff;
             font-size: 30px;
-            z-index: 16;
+            z-index: 100;
             display: none;
 
             &.visible {
@@ -79,12 +67,8 @@
         &__menu {
             @include reset-list;
             display: flex;
-            justify-content: flex-start;
-            align-items: center;
 
             @include media-breakpoint-down(lg) {
-                flex-direction: column;
-                justify-content: center;
                 position: absolute;
                 background-color: #000;
                 padding: 15px 75px;
@@ -105,7 +89,6 @@
                 display: flex;
                 left: 0;
                 transform: translate(-100%, 0);
-                justify-content: center;
                 transition: all .25s;
                 overflow-y: auto;
             }
@@ -197,10 +180,6 @@
     }
 
     .profile-container {
-        margin: 0 0 0 auto;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
 
         &__icon {
             cursor: pointer;
@@ -208,7 +187,6 @@
         }
 
         &__close-search {
-            display: block;
             font-size: 30px;
             right: 15px;
             top: 15px;
@@ -224,7 +202,6 @@
 
         &__search-wrapper {
             @include media-breakpoint-down(sm) {
-                display: flex;
                 justify-content: center;
                 align-items: center;
                 width: 100%;
@@ -233,14 +210,7 @@
                 position: absolute;
                 left: 0;
                 top: 0;
-                display: none;
                 z-index: 15;
-            }
-
-            &.visible {
-                @include media-breakpoint-down(sm) {
-                    display: flex;
-                }
             }
         }
 
@@ -249,11 +219,6 @@
             position: absolute;
             bottom: 100px;
             padding: 14px 60px;
-            display: none;
-
-            @include media-breakpoint-down(sm) {
-                display: inline-block;
-            }
         }
 
         &__search-input {
@@ -276,7 +241,6 @@
                 border-bottom: 1px solid $color-red;
                 background-color: #000;
                 max-width: 90%!important;
-                text-align: center;
                 font-size: 36px;
                 color: #fff;
             }

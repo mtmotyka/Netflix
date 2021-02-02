@@ -656,12 +656,12 @@ $form-feedback-icon-invalid:        str-replace(url("data:image/svg+xml,%3csvg x
 // Dropdown menu container and contents.
 
 $dropdown-min-width:                10px !default;
-$dropdown-padding-y:                .5px !default;
+$dropdown-padding-y:                15px !default;
 $dropdown-spacer:                   .125px !default;
-$dropdown-bg:                       $white !default;
-$dropdown-border-color:             rgba($black, .15) !default;
-$dropdown-border-radius:            $border-radius !default;
-$dropdown-border-width:             $border-width !default;
+$dropdown-bg:                       #000 !default;
+$dropdown-border-color:             #fe0d1e !default;
+$dropdown-border-radius:            0 0 20px 20px !default;
+$dropdown-border-width:             1px !default;
 $dropdown-inner-border-radius:      calc(#{$dropdown-border-radius} - #{$dropdown-border-width}) !default;
 $dropdown-divider-bg:               $gray-200 !default;
 $dropdown-box-shadow:               0 .5px 1px rgba($black, .175) !default;

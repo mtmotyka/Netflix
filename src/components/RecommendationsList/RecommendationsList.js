@@ -15,7 +15,7 @@ const RecommendationsList = () => {
         onClick={(e) => setIsListOpened(!isListOpened)}
       >
         <img src={IcoRecommendations} alt="" className="label__icon" />
-        RECOMMENDED FOR YOU <IcoDropdown className="custom-select__arrow" />
+        RECOMMENDED FOR YOU <IcoDropdown className={`custom-select__arrow ${isListOpened === true ? "opened" : ""}`} />
       </div>
       <ul
         className={`custom-select__list ${
